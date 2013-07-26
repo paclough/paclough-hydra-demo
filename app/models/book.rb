@@ -3,6 +3,6 @@ class Book < ActiveFedora::Base
 
   has_many :pages, :property => :is_part_of
 
-  delegate :title, to: 'descMetadata'
+  delegate :title, to: 'descMetadata', unique: true
   delegate :author, to: 'descMetadata'
 end

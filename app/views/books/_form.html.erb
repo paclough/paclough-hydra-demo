@@ -15,10 +15,20 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :author %><br />
-    <%= f.text_field :author %>
-  </div>
+
+  <%= f.label :author, "Authors" %>
+  <% @book.author.each do | author | %>
+    <div class="field">
+      <%= text_field_tag "book[ author ][]", author %>
+    </div>
+  <% end %>
+  
+  <%- if @book.author.empty? %>
+    <div class="field">
+      <%= text_field_tag "book[ author ][]", nil %>
+    </div>
+  <%- end %>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
