@@ -13,6 +13,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    authorize! :show, params[ :id ]
     @book = Book.find(params[:id])
 
     respond_to do |format|

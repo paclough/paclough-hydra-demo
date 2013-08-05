@@ -1,5 +1,8 @@
 class Book < ActiveFedora::Base
+  include Hydra::ModelMixins::RightsMetadata
+
   has_metadata 'descMetadata', type: Datastream::BookMetadata
+  has_metadata :name => "rightsMetadata", :type => Hydra::Datastream::RightsMetadata
 
   has_many :pages, :property => :is_part_of
 

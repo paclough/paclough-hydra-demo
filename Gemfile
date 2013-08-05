@@ -45,7 +45,7 @@ gem 'jquery-rails'
 ###
 
 gem 'blacklight'
-gem 'hydra-head', '6.0.0'
+gem 'hydra-head', '6.3.1'
 gem 'jettywrapper'
 gem "unicode", :platforms => [:mri_18, :mri_19]
 gem "devise"
