@@ -4,6 +4,7 @@ class Datastream::BookMetadata < ActiveFedora::OmDatastream
     t.root( path: "fields" )
     t.title( index_as: :stored_searchable )
     t.author( index_as: :stored_searchable )
+    t.publication_date(index_as: :stored_searchable)
   end
 
   def self.xml_template

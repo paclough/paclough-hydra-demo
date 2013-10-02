@@ -8,4 +8,5 @@ class Book < ActiveFedora::Base
 
   delegate :title, to: 'descMetadata', unique: true
   delegate :author, to: 'descMetadata'
+  delegate :publication_date, to: 'descMetadata', unique: true
 end
